@@ -1,0 +1,25 @@
+{
+  "name": "edu-rpg-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "External API for Edu-RPG (Roblox) — multi-tenant schools, quests, scores",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "dev": "npm run build && node --watch dist/main.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "@types/pg": "^8.11.11",
+    "typescript": "^5.8.3"
+  }
+}

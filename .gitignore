@@ -39,3 +39,13 @@ luac.out
 *.x86_64
 *.hex
 
+# Node / backend
+node_modules/
+dist/
+.env
+.env.local
+*.log
+
+# Roblox build artifacts
+roblox/build/
+

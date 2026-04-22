@@ -1,0 +1,38 @@
+# Step 1: PostgreSQL + API skeleton
+# Usage: docker compose up --build
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: edu-rpg-postgres
+    environment:
+      POSTGRES_USER: edurpg
+      POSTGRES_PASSWORD: edurpg_dev_change_me
+      POSTGRES_DB: edurpg
+    ports:
+      - "5432:5432"
+    volumes:
+      - edu_rpg_pgdata:/var/lib/postgresql/data
+      - ./backend/db/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U edurpg -d edurpg"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: edu-rpg-api
+    environment:
+      PORT: "3000"
+      DATABASE_URL: postgresql://edurpg:edurpg_dev_change_me@postgres:5432/edurpg
+      GAME_API_SECRET: change_me_for_dev_only
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  edu_rpg_pgdata:

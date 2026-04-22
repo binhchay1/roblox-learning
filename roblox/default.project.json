@@ -1,0 +1,54 @@
+{
+  "name": "EduRPGVietnam",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": {
+        "$path": "src/ReplicatedStorage/Shared"
+      },
+      "Remotes": {
+        "$className": "Folder"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Bootstrap": {
+        "$path": "src/ServerScriptService/Bootstrap.server.luau"
+      },
+      "Services": {
+        "$path": "src/ServerScriptService/Services"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "Config": {
+        "$path": "src/ServerStorage/Config"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$path": "src/StarterPlayer/StarterPlayerScripts"
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "MainHUD": {
+        "$path": "src/StarterGui/MainHUD"
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "Map": {
+        "$className": "Folder"
+      },
+      "Portals": {
+        "$className": "Folder"
+      },
+      "QuestNPCs": {
+        "$className": "Folder"
+      }
+    }
+  }
+}
